@@ -5,7 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 
 import "./globals.css";
-import styles from "./page.module.css";
+import styles from "./layout.module.css";
 
 const roboto = Roboto({
   variable: "--font-roboto-sans",
@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable}`}>
+      <body className={styles.body}>
         <Navbar />
         <main className={styles.main}>{children}</main>
         <Footer />
