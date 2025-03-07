@@ -1,4 +1,24 @@
-html {
+:root {
+  --primary-color: #222831;
+  --secondary-color: #393e46;
+  --tertiary-color: #00adb5;
+
+  --primary-text-color: #eeeeee;
+  --secondary-text-color: #cecece;
+
+  --default-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
+
+  --default-transition: 150ms ease-in;
+}
+
+body {
   font-family: "Roboto", sans;
   box-sizing: border-box;
+  background-color: var(--primary-color);
+  color: var(--primary-text-color);
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
