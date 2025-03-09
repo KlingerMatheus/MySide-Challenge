@@ -6,7 +6,6 @@
 
 .product {
   position: relative;
-  height: 300px;
   background-color: var(--secondary-color);
   border: 1px solid var(--secondary-color);
   overflow: hidden;
@@ -15,6 +14,7 @@
   border-radius: 4px;
 
   .image {
+    background-color: #fff;
     position: relative;
     height: 200px;
     overflow: hidden;
@@ -53,6 +53,11 @@
     display: flex;
     flex-direction: column;
     gap: 6px;
+
+    .product-price {
+      text-align: end;
+      font-size: 24px;
+    }
   }
 
   h3,
@@ -97,6 +102,11 @@
     position: relative;
     overflow: hidden;
 
+    .add-to-cart-primary {
+      display: flex;
+      align-items: center;
+    }
+
     .add-to-cart-overlay {
       position: absolute;
       top: 100%;
@@ -121,7 +131,7 @@
   }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1200px) {
   .container {
     grid-template-columns: repeat(2, minmax(200px, 1fr));
   }
