@@ -1,10 +1,16 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./navbar.module.css";
 import { ShoppingCartIcon } from "@heroicons/react/24/solid";
+import { useSelector } from "react-redux";
+import { RootState } from "@/types";
 
 export const Navbar = () => {
-  const cartItemsQuantity = 2; // While Store was not implemented yet, this value is being mocked
+  const cartProductsQuantity = useSelector(
+    (state: RootState) => state.cart.products.length
+  );
 
   return (
     <nav className={styles.nav}>
@@ -27,7 +33,7 @@ export const Navbar = () => {
         <li className={styles["cart-button"]}>
           <Link href="/cart">
             <span className={styles["cart-items-count"]}>
-              {cartItemsQuantity <= 9 ? cartItemsQuantity : "9+"}
+              {cartProductsQuantity <= 9 ? cartProductsQuantity : "9+"}
             </span>
             <ShoppingCartIcon height={32} />
           </Link>
