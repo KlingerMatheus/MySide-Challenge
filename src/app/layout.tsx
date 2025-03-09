@@ -6,6 +6,7 @@ import { Navbar } from "@/components/layout/Navbar";
 
 import "./globals.css";
 import styles from "./layout.module.css";
+import ProviderWrapper from "@/components/ProviderWrapper";
 
 const roboto = Roboto({
   variable: "--font-roboto-sans",
@@ -25,10 +26,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={styles.body}>
-        <Navbar />
-        <main className={styles.main}>{children}</main>
-        <Footer />
+      <body className={`${styles.body} ${roboto.className}`}>
+        <ProviderWrapper>
+          <Navbar />
+          <main className={styles.main}>{children}</main>
+          <Footer />
+        </ProviderWrapper>
       </body>
     </html>
   );
