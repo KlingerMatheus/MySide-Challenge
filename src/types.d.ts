@@ -28,8 +28,13 @@ export type ProductsApiResponse = ApiResponse<Product>;
 
 export type CategoriesApiResponse = ApiResponse<Category>;
 
+type CartProduct = Product & {
+  quantity: number;
+};
+
 export type CartState = {
-  products: Product[];
+  products: CartProduct[];
+  totalPrice: number;
 };
 
 export type RootState = {
