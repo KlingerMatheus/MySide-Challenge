@@ -10,6 +10,7 @@ import { useDispatch } from "react-redux";
 import { CartActions } from "@/lib/reducers/cartSlice";
 import { useRouter } from "next/navigation";
 import { formatPrice } from "@/utils";
+import { PrimaryButton } from "../primary-button/PrimaryButton";
 
 interface ListProductProps {
   product: Product;
@@ -57,22 +58,18 @@ const ListProduct: FC<ListProductProps> = ({ product, isExisting }) => {
           {formatPrice(product.price)}
         </span>
       </div>
-      <button
-        className={styles["add-cart-button"]}
-        style={{
-          background: isExisting ? "#eb4848" : "#48eb50",
-        }}
+      <PrimaryButton
+        label={
+          <>
+            {isExisting ? <MinusIcon height={24} /> : <PlusIcon height={24} />}
+            <ShoppingCartIcon height={24} />
+          </>
+        }
         onClick={addToCart}
-      >
-        <div className={styles["add-to-cart-primary"]}>
-          {isExisting ? <MinusIcon height={24} /> : <PlusIcon height={24} />}
-          <ShoppingCartIcon height={24} />
-        </div>
-
-        <span className={styles["add-to-cart-overlay"]}>
-          {isExisting ? "Remove from" : "Add to"} cart
-        </span>
-      </button>
+        onHoverOverlay={<>{isExisting ? "Remove from" : "Add to"} cart</>}
+        isExistingProduct={isExisting}
+        variant="addToCart"
+      />
     </div>
   );
 };
