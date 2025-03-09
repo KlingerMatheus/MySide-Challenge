@@ -10,10 +10,10 @@
   --default-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
 
   --default-transition: 150ms ease-in;
+  --soft-transition: 300ms cubic-bezier(0.175, 0.885, 0.32, 1);
 }
 
 body {
-  font-family: "Roboto", sans;
   box-sizing: border-box;
   background-color: var(--primary-color);
   color: var(--primary-text-color);
@@ -22,4 +22,11 @@ body {
 * {
   margin: 0;
   padding: 0;
+}
+
+main {
+  width: 100%;
+  margin-block: 24px;
+  max-width: 1440px;
+  place-self: center;
 }
