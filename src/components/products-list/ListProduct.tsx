@@ -1,5 +1,5 @@
 import { Product } from "@/types";
-import { FC, useState } from "react";
+import { FC } from "react";
 import Image from "next/image";
 
 import styles from "./styles.module.css";
@@ -54,14 +54,20 @@ const ListProduct: FC<ListProductProps> = ({ product, isExisting }) => {
         <p>{product.description}</p>
       </div>
       <button
-        className={styles.addCartButton}
+        className={styles["add-cart-button"]}
         style={{
           background: isExisting ? "#eb4848" : "#48eb50",
         }}
         onClick={addToCart}
       >
-        {isExisting ? <MinusIcon height={24} /> : <PlusIcon height={24} />}
-        <ShoppingCartIcon height={24} />
+        <div className={styles["add-to-cart-primary"]}>
+          {isExisting ? <MinusIcon height={24} /> : <PlusIcon height={24} />}
+          <ShoppingCartIcon height={24} />
+        </div>
+
+        <span className={styles["add-to-cart-overlay"]}>
+          {isExisting ? "Remove from" : "Add to"} cart
+        </span>
       </button>
     </div>
   );
