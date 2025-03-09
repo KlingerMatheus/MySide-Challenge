@@ -62,6 +62,7 @@
     align-items: center;
     height: min-content;
     padding: 8px;
+    cursor: pointer;
   }
 }
 
