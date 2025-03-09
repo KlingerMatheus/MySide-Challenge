@@ -20,7 +20,8 @@ interface ApiResponse<T> {
   status: string;
   message: string;
   categories?: Categories;
-  products?: T[];
+  products?: Product[];
+  product?: Product;
 }
 
 export type ProductsApiResponse = ApiResponse<Product>;
