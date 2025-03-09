@@ -9,6 +9,7 @@ import { MinusIcon } from "@heroicons/react/24/outline";
 import { useDispatch } from "react-redux";
 import { CartActions } from "@/lib/reducers/cartSlice";
 import { useRouter } from "next/navigation";
+import { formatPrice } from "@/utils";
 
 interface ListProductProps {
   product: Product;
@@ -43,7 +44,7 @@ const ListProduct: FC<ListProductProps> = ({ product, isExisting }) => {
           defaultValue={NOT_FOUND_IMAGE_SRC}
           loading="lazy"
           fill
-          objectFit="cover"
+          objectFit="contain"
           blurDataURL={NOT_FOUND_IMAGE_SRC}
           placeholder="blur"
           sizes="300px"
@@ -52,6 +53,9 @@ const ListProduct: FC<ListProductProps> = ({ product, isExisting }) => {
       <div className={styles["product-info"]}>
         <h3 title={product.title}>{product.title}</h3>
         <p>{product.description}</p>
+        <span className={styles["product-price"]}>
+          {formatPrice(product.price)}
+        </span>
       </div>
       <button
         className={styles["add-cart-button"]}
