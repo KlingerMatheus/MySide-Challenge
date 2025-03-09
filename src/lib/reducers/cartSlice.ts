@@ -10,6 +10,12 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addProduct: (state, action) => {
+      const isExisting = state.products.some(
+        (product) => product.id === action.payload.id
+      );
+
+      if (isExisting) return;
+
       state.products.push(action.payload);
     },
     removeProduct: (state, action) => {

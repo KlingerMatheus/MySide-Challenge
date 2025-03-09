@@ -86,49 +86,6 @@
     -webkit-line-clamp: 2;
     overflow: hidden;
   }
-
-  .add-cart-button {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    border: none;
-    padding-block: 12px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: var(--default-transition);
-    position: relative;
-    overflow: hidden;
-
-    .add-to-cart-primary {
-      display: flex;
-      align-items: center;
-    }
-
-    .add-to-cart-overlay {
-      position: absolute;
-      top: 100%;
-      filter: blur(4px);
-    }
-
-    .add-to-cart-primary,
-    .add-to-cart-overlay {
-      transition: var(--soft-transition);
-    }
-
-    &:hover .add-to-cart-primary {
-      transform: translateY(-150%);
-      filter: blur(4px);
-    }
-
-    &:hover .add-to-cart-overlay {
-      top: 50%;
-      transform: translateY(-50%) scale(1.2);
-      filter: blur(0px);
-    }
-  }
 }
 
 @media (max-width: 1200px) {
