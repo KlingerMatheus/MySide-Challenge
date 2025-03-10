@@ -138,6 +138,8 @@ export default function HomePage() {
 
             {!isListLoading && (
               <ProductsList.Container>
+                {!!!displayableProducts?.length && "No products"}
+
                 {displayableProducts?.map((product) => {
                   const isExisting = !!cartProducts.find(
                     (cartProduct) => cartProduct.id === product.id
