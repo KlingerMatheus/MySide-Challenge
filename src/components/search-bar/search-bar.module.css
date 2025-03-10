@@ -1,6 +1,6 @@
 .search-container {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 
   .search-icon {
     padding: 12px 16px;
