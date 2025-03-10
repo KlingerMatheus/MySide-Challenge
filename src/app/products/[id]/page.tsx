@@ -78,9 +78,7 @@ export default function ProductPage() {
                 }
                 variant="addToCart"
                 onHoverOverlay={
-                  <span>
-                    {isExistingProduct ? "Remove from" : "Add to"} cart
-                  </span>
+                  <>{isExistingProduct ? "Remove from" : "Add to"} cart</>
                 }
                 isExistingProduct={isExistingProduct}
               />

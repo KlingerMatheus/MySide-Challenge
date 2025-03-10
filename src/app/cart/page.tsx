@@ -52,11 +52,15 @@ const CartProduct = ({ product }: { product: CartProductType }) => {
       </div>
 
       <div className={styles["product-actions"]}>
-        <button disabled={product.quantity <= 1} onClick={decrementQuantity}>
+        <button
+          aria-labelledby="Decrement"
+          disabled={product.quantity <= 1}
+          onClick={decrementQuantity}
+        >
           <MinusIcon height={16} />
         </button>
         {product.quantity}
-        <button onClick={incrementQuantity}>
+        <button aria-labelledby="Increment" onClick={incrementQuantity}>
           <PlusIcon height={16} />
         </button>
       </div>

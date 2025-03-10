@@ -46,6 +46,10 @@
 
 .message {
   text-wrap: pretty;
+
+  & :global(a) {
+    color: var(--primary-color);
+  }
 }
 
 @media (max-width: 700px) {
