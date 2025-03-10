@@ -40,7 +40,7 @@ export default function HomePage() {
     await getAllProducts()
       .then((data) => {
         const popularProducts = data.products?.filter(
-          (product) => product.popular
+          (product: Product) => product.popular
         );
 
         setProducts(popularProducts);
@@ -78,7 +78,7 @@ export default function HomePage() {
     }
 
     fetchCategories();
-  }, []);
+  }, [selectedCategory]);
 
   return (
     <div className={styles["page-container"]}>
@@ -94,7 +94,7 @@ export default function HomePage() {
                   className={styles["filter-name"]}
                   onClick={() => setIsCategoriesOpen((prev) => !prev)}
                 >
-                  <h3>
+                  <h3 className={styles["filter-title"]}>
                     <TagIcon height={18} />
                     Select category
                   </h3>
@@ -105,7 +105,7 @@ export default function HomePage() {
                   )}
                 </div>
                 {isCategoriesOpen && (
-                  <ul>
+                  <ul className={styles.list}>
                     <li
                       onClick={() => handleSelectCategory()}
                       data-isactive={!selectedCategory}

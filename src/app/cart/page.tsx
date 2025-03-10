@@ -32,6 +32,7 @@ const CartProduct = ({ product }: { product: CartProductType }) => {
       <div className={styles["product-details"]}>
         <Link href={`/products/${product.id}`}>
           <Image
+            className={styles["product-image"]}
             src={product.image}
             width={100}
             height={100}
@@ -81,7 +82,7 @@ export default function CartPage() {
     <div className={styles.container}>
       {cart.products.length > 0 ? (
         <div className={styles["list-container"]}>
-          <ul>
+          <ul className={styles.list}>
             {cart.products.map((product) => (
               <CartProduct key={product.id} product={product} />
             ))}

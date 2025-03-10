@@ -31,7 +31,7 @@ export const Navbar = () => {
         </li>
         <span className={styles.divider} />
         <li className={styles["cart-button"]}>
-          <Link href="/cart">
+          <Link href="/cart" className={styles["cart-link"]}>
             <span className={styles["cart-items-count"]}>
               {cartProductsQuantity <= 9 ? cartProductsQuantity : "9+"}
             </span>

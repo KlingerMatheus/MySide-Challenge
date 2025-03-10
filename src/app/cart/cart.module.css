@@ -6,7 +6,7 @@
   gap: 24px;
   border-radius: 4px;
 
-  ul {
+  .list {
     list-style-type: none;
     display: flex;
     flex-direction: column;
@@ -29,7 +29,7 @@
   gap: 12px;
   justify-content: space-between;
 
-  img {
+  .product-image {
     border-radius: 4px;
     max-width: 100px;
   }
@@ -56,14 +56,14 @@
   display: flex;
   gap: 12px;
   align-items: center;
+}
 
-  button {
-    display: flex;
-    align-items: center;
-    height: min-content;
-    padding: 8px;
-    cursor: pointer;
-  }
+.product-actions :global(button) {
+  display: flex;
+  align-items: center;
+  height: min-content;
+  padding: 8px;
+  cursor: pointer;
 }
 
 .remove-action {

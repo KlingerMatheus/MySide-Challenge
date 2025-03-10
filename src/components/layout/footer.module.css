@@ -22,12 +22,12 @@
   background: rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 
-  a,
-  img {
+  & :global(a),
+  & :global(img) {
     transition: var(--default-transition);
   }
 
-  a {
+  & :global(a) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,7 +35,6 @@
     padding: 8px;
 
     &:hover {
-      /* background-color: rgba(0, 0, 0, 0.05); */
       transform: rotate(360deg);
     }
 

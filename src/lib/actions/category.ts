@@ -1,8 +1,8 @@
 "use server";
 
-import { ApiResponse, Categories } from "@/types";
+import { ApiResponse } from "@/types";
 
-export async function getAllCategories(): Promise<ApiResponse<Categories>> {
+export async function getAllCategories(): Promise<ApiResponse> {
   try {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_BASE_URL}/products/category`
@@ -12,7 +12,7 @@ export async function getAllCategories(): Promise<ApiResponse<Categories>> {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    const data: ApiResponse<Categories> = await response.json();
+    const data: ApiResponse = await response.json();
     return data;
   } catch (error) {
     console.error("Error fetching categories:", error);

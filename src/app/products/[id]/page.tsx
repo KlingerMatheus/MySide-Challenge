@@ -24,7 +24,7 @@ export default function ProductPage() {
 
   const isExistingProduct = useMemo(() => {
     return cartProducts.some((cartProduct) => cartProduct.id === product?.id);
-  }, [cartProducts]);
+  }, [cartProducts, product?.id]);
 
   const onAddToCart = () => {
     if (!product) return;
@@ -45,7 +45,7 @@ export default function ProductPage() {
 
   useEffect(() => {
     fetchProduct();
-  }, []);
+  }, [fetchProduct]);
 
   return (
     <div>
@@ -88,7 +88,7 @@ export default function ProductPage() {
           </div>
           <div className={styles.details}>
             <h3>Details:</h3>
-            <ul>
+            <ul className={styles.list}>
               <li> {product?.description}</li>
               <li>
                 <b>Brand:</b> <span>{product?.brand}</span>

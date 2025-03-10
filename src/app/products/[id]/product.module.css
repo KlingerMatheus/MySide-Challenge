@@ -10,20 +10,20 @@
   }
 
   .details {
-    ul {
+    .list {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 12px;
       max-width: 100vw;
+    }
 
-      li span {
-        display: block;
-        text-transform: capitalize;
+    .list :global(li span) {
+      display: block;
+      text-transform: capitalize;
 
-        &::before {
-          content: "- ";
-        }
+      &::before {
+        content: "- ";
       }
     }
   }
@@ -39,10 +39,10 @@
   height: 400px;
 
   background-color: white;
+}
 
-  img {
-    object-fit: contain;
-  }
+.product-image :global(img) {
+  object-fit: contain;
 }
 
 .add-cart-wrapper {
@@ -50,10 +50,10 @@
   flex-direction: column;
   gap: 16px;
   flex-grow: 1;
+}
 
-  span {
-    font-size: 32px;
-  }
+.add-cart-wrapper :global(span) {
+  font-size: 32px;
 }
 
 @media (max-width: 960px) {

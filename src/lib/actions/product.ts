@@ -1,10 +1,10 @@
 "use server";
 
-import { ApiResponse, Product } from "@/types";
+import { ApiResponse } from "@/types";
 
 export async function getProductsByCategory(
   category: string
-): Promise<ApiResponse<Product>> {
+): Promise<ApiResponse> {
   try {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_BASE_URL}/products/category?type=${category}`
@@ -14,7 +14,7 @@ export async function getProductsByCategory(
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    const data: ApiResponse<Product> = await response.json();
+    const data: ApiResponse = await response.json();
     return data;
   } catch (error) {
     console.error("Error fetching products by category:", error);
@@ -22,7 +22,7 @@ export async function getProductsByCategory(
   }
 }
 
-export async function getProduct(id: number): Promise<ApiResponse<Product>> {
+export async function getProduct(id: number): Promise<ApiResponse> {
   try {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_BASE_URL}/products/${id}`
@@ -32,7 +32,7 @@ export async function getProduct(id: number): Promise<ApiResponse<Product>> {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    const data: ApiResponse<Product> = await response.json();
+    const data: ApiResponse = await response.json();
     return data;
   } catch (error) {
     console.error("Error fetching product:", error);
@@ -40,7 +40,7 @@ export async function getProduct(id: number): Promise<ApiResponse<Product>> {
   }
 }
 
-export async function getAllProducts(): Promise<ApiResponse<Product>> {
+export async function getAllProducts(): Promise<ApiResponse> {
   try {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_BASE_URL}/products?limit=150`
@@ -50,7 +50,7 @@ export async function getAllProducts(): Promise<ApiResponse<Product>> {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    const data: ApiResponse<Product> = await response.json();
+    const data: ApiResponse = await response.json();
     return data;
   } catch (error) {
     console.error("Error fetching products:", error);

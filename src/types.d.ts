@@ -16,7 +16,7 @@ type Category = string;
 
 type Categories = Category[];
 
-interface ApiResponse<T> {
+interface ApiResponse {
   status: string;
   message: string;
   categories?: Categories;

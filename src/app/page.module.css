@@ -37,33 +37,33 @@
     flex-direction: column;
     gap: 8px;
 
-    h3 {
+    .filter-title {
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
-    ul {
+    .list {
       gap: 4px;
     }
+  }
 
-    li {
-      list-style: none;
-      padding: 12px;
-      cursor: pointer;
-      text-transform: capitalize;
-      transition: var(--default-transition);
+  .filter :global(li) {
+    list-style: none;
+    padding: 12px;
+    cursor: pointer;
+    text-transform: capitalize;
+    transition: var(--default-transition);
 
-      &:hover {
-        background-color: var(--primary-color);
-      }
+    &:hover {
+      background-color: var(--primary-color);
     }
+  }
 
-    [data-isactive="true"] {
-      pointer-events: none;
-      background-color: var(--tertiary-color);
-      font-weight: 700;
-    }
+  .filter :global([data-isactive="true"]) {
+    pointer-events: none;
+    background-color: var(--tertiary-color);
+    font-weight: 700;
   }
 }
 
